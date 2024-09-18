@@ -1,70 +1,128 @@
-# Getting Started with Create React App
+# Client Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is a Client Management System that includes both frontend and backend components. It allows users to manage job sheets, view and edit notes, and handle job data.
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+- **Frontend**: React
+- **Backend**: Node.js with Express
+- **Database**: MySQL
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- `frontend/` - Contains the React application.
+- `backend/` - Contains the Node.js and Express backend application.
+- `backend/database-schema.sql` - SQL file for database schema and initial data.
 
-### `npm test`
+## Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js and npm installed
+- MySQL installed and running
 
-### `npm run build`
+## Frontend Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Navigate to the frontend directory:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    cd frontend
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Install dependencies:**
 
-### `npm run eject`
+    ```bash
+    npm install
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. **Start the React application:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```bash
+    npm start
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    The frontend application will be available at `http://localhost:3000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Backend Setup
 
-## Learn More
+1. **Navigate to the backend directory:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    ```bash
+    cd backend
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Install dependencies:**
 
-### Code Splitting
+    ```bash
+    npm install
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Set Up the Database:**
 
-### Analyzing the Bundle Size
+    - Ensure MySQL is installed and running.
+    - Create a new database:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+        ```sql
+        CREATE DATABASE client_management_system;
+        ```
 
-### Making a Progressive Web App
+    - Import the SQL file into the newly created database:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+        ```bash
+        mysql -u your-username -p client_management_system < database-schema.sql
+        ```
 
-### Advanced Configuration
+4. **Run the Backend Server:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    ```bash
+    npm start
+    ```
 
-### Deployment
+    The backend server will be available at `http://localhost:3001`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## API Endpoints
 
-### `npm run build` fails to minify
+- **GET** `/api/job-sheets` - Retrieve all job sheets
+- **POST** `/api/job-sheets` - Create a new job sheet
+- **GET** `/api/job-sheets/:id` - Retrieve a specific job sheet by ID
+- **PATCH** `/api/job-sheets/:id` - Update a specific job sheet by ID
+- **DELETE** `/api/job-sheets/:id` - Delete a specific job sheet by ID
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Frontend Features
+
+- View job sheets with details including client information, received date, inventory, reported issues, and more.
+- Edit and save client notes.
+- Export job sheet details as a PDF.
+- View and download attached files.
+
+## Backend Features
+
+- Handles CRUD operations for job sheets.
+- Manages database connections and queries.
+
+## Notes
+
+- Ensure you have created a `.env` file in the `backend` directory with the following content:
+
+    ```env
+    DB_HOST=localhost
+    DB_USER=root
+    DB_PASSWORD=password
+    DB_NAME=client_management_system
+    ```
+
+  Update the values according to your MySQL configuration.
+
+## Troubleshooting
+
+- If you encounter issues, check if MySQL is running and that the database credentials in `.env` are correct.
+- Verify that the backend server is running and accessible at `http://localhost:3001`.
+- Ensure the frontend and backend applications are not conflicting on ports.
+
+## Contributing
+
+Feel free to open issues or submit pull requests. Contributions and feedback are welcome!
+
+## License
+
+This project is licensed under the MIT License.

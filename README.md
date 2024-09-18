@@ -12,9 +12,8 @@ This project is a Client Management System that includes both frontend and backe
 
 ## Project Structure
 
-- `frontend/` - Contains the React application.
 - `backend/` - Contains the Node.js and Express backend application.
-- `backend/database-schema.sql` - SQL file for database schema and initial data.
+- `client_management_system.sql` - SQL file for database schema and initial data.
 
 ## Prerequisites
 
@@ -26,7 +25,7 @@ This project is a Client Management System that includes both frontend and backe
 1. **Navigate to the frontend directory:**
 
     ```bash
-    cd frontend
+    cd directory_name
     ```
 
 2. **Install dependencies:**
@@ -48,7 +47,7 @@ This project is a Client Management System that includes both frontend and backe
 1. **Navigate to the backend directory:**
 
     ```bash
-    cd backend
+    cd backend/client-manager
     ```
 
 2. **Install dependencies:**
@@ -119,10 +118,6 @@ This project is a Client Management System that includes both frontend and backe
 - Verify that the backend server is running and accessible at `http://localhost:3001`.
 - Ensure the frontend and backend applications are not conflicting on ports.
 
-## Contributing
+## Contributions
 
 Feel free to open issues or submit pull requests. Contributions and feedback are welcome!
-
-## License
-
-This project is licensed under the MIT License.

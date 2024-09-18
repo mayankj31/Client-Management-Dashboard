@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Dashboard from './components/Dashboard';
+import JobSheetForm from './components/JobSheetForm';
+import ViewJobSheet from './components/ViewJobSheet';
+import Header from './components/Header'; // New header component
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header /> {/* Moved header to a new component */}
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/new-job-sheet" element={<JobSheetForm />} />
+          <Route path="/edit-job-sheet/:id" element={<JobSheetForm />} />
+          <Route path="/view-job-sheet/:id" element={<ViewJobSheet />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -1,13 +1,338 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --primary-color: #003366;
+  --secondary-color: #f0f0f0;
+  --text-color: #333;
+  --text-color-light: #fff;
+  --blue-color: #007bff; /* Blue color for view button */
+  --orange-color: #ff6600; /* Orange color for edit button */
+  --red-color: #ff0000; /* Red color for delete button */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App{
+text-align: center;  
+}
+
+.App h1{
+  border: 2px solid black; /* Creates a 2px solid black border */
+  width: 90%;
+  background-color: var(--primary-color);
+  color: white;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 20px; /* Adds some space inside the border */
+  display: inline-block; /* Keeps the box around the text only */
+}
+
+.header {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  padding: 1rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+input, select, textarea {
+  width: 86%;
+  margin-left: 10px; 
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search{
+  position: static; 
+  margin-left: 10px; 
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  padding: 0.5rem;
+  width: 5%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.newjob {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  top: 30px;
+  text-align: center; 
+}
+
+table {
+  margin-top: 50px;
+  width: 92%;
+  border-collapse: collapse;
+  border: 2px solid white; /* Creates a 2px solid border */
+  background-color: var(--primary-color);
+  color: white;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 4px;
+  margin-left: 4%;
+}
+
+thead {
+  background-color: var(--primary-color); /* Blue background for header */
+  color: white; /* White text color for header */
+}
+
+th, td {
+  padding: 2rem 1rem;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 17px;
+  text-align: left;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+}
+
+tbody tr {
+  background-color: white; /* Ensure body rows are white */
+  border-bottom: 0.5px solid #ccc;
+  /* border-color: #333; */
+  color: black;
+}
+
+.footer {
+  border: 2px solid black; /* Creates a border similar to h1 */
+  width: 90%;
+  background-color: var(--primary-color); /* Blue background */
+  color: white; /* White text */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-transform: uppercase;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 20px auto; /* Center align and add some margin */
+  display: inline-block;
+}
+
+.view-button {
+  background-color: #003366;
+  padding: 0.2rem 0.5rem;
+  color: white;
+  border: 2px solid #003366; /* Creates a border similar to h1 */
+  border-radius: 4px;
+}
+
+.edit-button {
+  background-color: var(--orange-color);
+  padding: 0.2rem 0.5rem;
+  color: white;
+  border: 2px solid var(--orange-color); /* Creates a border similar to h1 */
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+.delete-button {
+  background-color: var(--red-color);
+  padding: 0.2rem 0.5rem;
+  color: white;
+  border: 2px solid var(--red-color); /* Creates a border similar to h1 */
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Ensuring form fields match header width and alignment */
+form {
+  width: 91.2%; /* Same as the header width */
+  margin-left: 3.4%; /* Same margin as the header for centering */
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+form label {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 600;
+  font-size: 17px;
+  margin-left: 0.5%;
+  margin-bottom: 0.5rem;
+}
+
+form input, form textarea, form select {
+  width: 100%; /* Takes up the full width of the form */
+  padding: 0.5rem; /* Consistent padding */
+  border: 1px solid #ccc; /* Consistent border */
+  border-radius: 4px; /* Border radius to match the overall design */
+}
+
+#status{
+  width:101.3%;
+}
+
+.submitted{
+  border: 2px solid var(--primary-color); 
+  width: 101.5%;
+  margin-left: 0.5%;
+  background-color: var(--primary-color);
+  color: white;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 5px; 
+  cursor: pointer;
+}
+
+.details{
+  border: 2px solid var(--primary-color); 
+  margin-left: 4%;
+  width: 92%;
+}
+
+.view-job-sheet {
+  max-width: 92.3%;
+  margin: 20px 70px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.view-job-sheet-header {
+  background-color: #003366;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.job-sheet-details {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.job-sheet-row {
+  display: table-row;
+}
+
+.job-sheet-label, .job-sheet-value {
+  display: table-cell;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.job-sheet-label {
+  background-color: #003366;
+  color: white;
+  font-weight: bold;
+  width: 40%;
+}
+
+.job-sheet-value {
+  width: 60%;
+}
+
+.notes-section {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: start;
+  padding: 5px;
+  width: 100%;
+}
+
+.notes-input {
+  width: 100%;
+  margin: -10px -5px;
+  padding: 30px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.save-note-btn {
+  background-color: #003366;
+  color: white;
+  font-size: 17px;
+  margin-left: -5px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+}
+
+.edit-btn{
+  color: blue;
+  justify-content: flex-start;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.delete-btn{
+  color: blue;
+  margin-right: auto;
+  background-color: #fff;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.back-btn{
+  color: blue;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  justify-content:end;
+  font-size: 17px;
+  font-weight: 800;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.save-pdf-btn {
+  display: block;
+  border-radius:4px;
+  font-size: 17px;
+  margin: 15px auto;
+  padding: 5px 10px;
+}
+
+.cancelled{
+  text-decoration: none;
+  text-align: center;
+  background-color: #fff;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border: none;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cancel{
+  text-decoration: none;
+  color: blue;
 }

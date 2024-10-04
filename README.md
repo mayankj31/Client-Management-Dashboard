@@ -131,3 +131,7 @@ This is how my dashboard looks like :
 ![client3](https://github.com/user-attachments/assets/9adf4abe-6928-4e92-98cd-158e77af94ee)
 
 ![client4](https://github.com/user-attachments/assets/a21ba74a-2fb3-4b35-b438-620b5019964a)
+
+![client5](https://github.com/user-attachments/assets/c71a8743-5df8-4416-ba1d-ced74f7fb397)
+
+![client6](https://github.com/user-attachments/assets/8ffe2339-79fe-4385-87f2-7f8def69afe9)

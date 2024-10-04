@@ -1,4 +1,4 @@
-# Client Management System
+# Client Management Dashboard
 
 ## Overview
 
@@ -121,3 +121,13 @@ This project is a Client Management System that includes both frontend and backe
 ## Contributions
 
 Feel free to open issues or submit pull requests. Contributions and feedback are welcome!
+
+This is how my dashboard looks like :
+
+![client1](https://github.com/user-attachments/assets/7135cf9f-fcbe-47a6-8355-38eb84a0d273)
+
+![client2](https://github.com/user-attachments/assets/778f52b3-e993-48f9-9bcf-a9fe93442e01)
+
+![client3](https://github.com/user-attachments/assets/9adf4abe-6928-4e92-98cd-158e77af94ee)
+
+![client4](https://github.com/user-attachments/assets/a21ba74a-2fb3-4b35-b438-620b5019964a)
